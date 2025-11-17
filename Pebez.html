@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pebez Industrial Services Limited</title>
+  <meta name="description" content="Pebez Industrial Services Limited — Industrial maintenance, fabrication, piping, plant turnaround & mechanical services." />
+  <meta name="theme-color" content="#0b3d91" />
+  <link rel="icon" type="image/png" href="https://media.licdn.com/dms/image/v2/D4D0BAQEoFNbfzPsHNQ/company-logo_100_100/B4DZfKahkxGsAU-/0/1751447641051?e=1764201600&v=beta&t=iHzMM-C12HRIBmR7U8nUapihsy5fl2xCFAhbWuElG6Q" />
+
+  <!-- Basic styles (single-file) -->
+  <style>
+    :root{
+      --brand:#0b3d91;
+      --accent:#f6a500;
+      --muted:#6b7280;
+      --bg:#f7fafc;
+      --card:#ffffff;
+      --radius:12px;
+      --max-w:1100px;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: light;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+   body {
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg), #eef4ff);
+  color: #0f1724;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+}
+    .wrap{
+      width:100%;
+      max-width:var(--max-w);
+      margin:0 auto;
+      background:transparent;
+    }
+
+    /* header */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:18px;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      text-decoration:none;
+      color:inherit;
+    }
+    .logo {
+  width: 54px;
+  height: 54px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  box-shadow: none;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+    nav{display:flex;gap:14px;align-items:center;}
+    a.btn, button.btn{
+      background:var(--brand); color:white; border:0; padding:10px 14px; border-radius:10px;
+      font-weight:600; text-decoration:none; cursor:pointer;
+    }
+    .nav-links{display:flex;gap:12px; align-items:center;}
+    .nav-links a{color:var(--muted); text-decoration:none; font-weight:600;}
+    .nav-links a:hover{color:var(--brand)}
+
+    /* hero */
+    .hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* equal width for text and illustration */
+  gap: 22px;
+  align-items: center;
+  margin-bottom: 28px;
+}
+    .panel{
+      background:var(--card);
+      padding:22px;
+      border-radius:var(--radius);
+      box-shadow:0 8px 30px rgba(15,23,36,0.06);
+    }
+    .hero h1{margin:0 0 8px;font-size:28px;color:var(--brand)}
+    .lead{color:var(--muted);margin-bottom:16px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .stats{display:flex;gap:14px;margin-top:18px}
+    .stat{background:#f8fafc;padding:10px;border-radius:10px;min-width:90px;text-align:center}
+    .stat .num{font-weight:700;font-size:18px;color:var(--brand)}
+    .illustration {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  max-height: 320px;
+  background: #eef4ff; /* fallback background */
+}
+
+.illustration img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.9) saturate(1.3) contrast(1.2) grayscale(0.15) drop-shadow(0 2px 6px rgba(0,0,0,0.08));
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* subtle hover zoom effect */
+.illustration img:hover {
+  transform: scale(1.03);
+  filter: brightness(1) saturate(1.35) contrast(1.2) grayscale(0.1);
+}
+
+/* gradient overlay to mimic SVG look */
+.illustration::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 61, 145, 0.25) 0%,   /* top brand blue tint */
+    rgba(255, 255, 255, 0.3) 50%,  /* mid soft white */
+    rgba(230, 240, 255, 0.5) 100%  /* bottom light blue fade */
+  );
+  pointer-events: none; /* allows clicks on image */
+  border-radius: 10px;
+}
+
+    /* services */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-bottom:22px;
+    }
+    .service{
+      padding:16px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid rgba(11,61,145,0.04);
+    }
+    .service h3{margin:8px 0 6px;font-size:16px;color:var(--brand)}
+    .service p{margin:0;color:var(--muted);font-size:14px}
+
+    /* projects */
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}
+    .project{
+      overflow:hidden;border-radius:12px; background:linear-gradient(180deg,#fff,#fbfdff); border:1px solid rgba(11,61,145,0.04);
+      min-height:140px; display:flex;flex-direction:column;
+    }
+    .project .thumb{flex:1;background:linear-gradient(135deg,#eaf4ff,#dbeeff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#2b6cb0;font-size:22px}
+    .project .meta{padding:12px;border-top:1px solid rgba(15,23,36,0.03)}
+    .project .meta h4{margin:0;font-size:15px;color:var(--brand)}
+    .project .meta p{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+    /* team + contact */
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px}
+    .team-list{display:flex;flex-direction:column;gap:12px}
+    .member{display:flex;gap:12px;align-items:center}
+    .avatar{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#cfe6ff,#a1c9ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#0b3d91}
+    .contact-form label{display:block;font-weight:600;font-size:14px;margin:8px 0 6px}
+    .contact-form input,.contact-form textarea{
+      width:100%;padding:10px;border-radius:8px;border:1px solid #e6eefb;font-size:14px;
+      background:white;
+    }
+    .contact-form textarea{min-height:120px;resize:vertical}
+    .muted{color:var(--muted);font-size:14px}
+
+    footer{margin-top:12px;padding:12px;text-align:center;color:var(--muted);font-size:14px}
+
+    /* small screens */
+    @media (max-width:980px){
+  .hero {
+    grid-template-columns: 1fr; /* stack panels vertically */
+  }
+}
+
+    @media (max-width:640px){
+      body{padding:16px}
+      .grid,.projects{grid-template-columns:1fr}
+      .nav-links{display:none}
+      .menu-toggle{display:inline-block}
+      header{align-items:flex-start}
+    }
+
+    /* minimal nav drawer */
+    .drawer{display:none;position:fixed;inset:0;background:rgba(2,6,23,0.45);z-index:90;align-items:flex-start;padding:24px}
+    .drawer .panel{width:100%;max-width:320px;margin-top:24px}
+    .drawer.open{display:flex}
+    .drawer a{display:block;padding:10px 0;color:var(--brand);text-decoration:none;font-weight:700}
+    .menu-toggle{display:none;background:none;border:0;color:var(--brand);font-weight:800;padding:8px 10px;border-radius:8px}
+    /* small utility */
+    .small{font-size:13px}
+    /* Lightbox overlay */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.lightbox .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+  .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: white;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  background: #1a365d;
+  transform: translateY(-3px);
+}
+
+  </style>
+</head>
+<body>
+  <div class="wrap" role="document">
+    <header aria-label="Main header">
+  <a class="brand" href="#">
+    <div class="logo">
+      <img 
+        src="https://media.licdn.com/dms/image/v2/D4D0BAQEoFNbfzPsHNQ/company-logo_100_100/B4DZfKahkxGsAU-/0/1751447641051?e=1764201600&v=beta&t=iHzMM-C12HRIBmR7U8nUapihsy5fl2xCFAhbWuElG6Q" 
+        alt="Pebez Industrial Services Limited Logo" 
+      />
+    </div>
+    <div>
+      <div style="font-weight:800">Pebez</div>
+      <div class="small muted">Industrial Services Limited</div>
+    </div>
+  </a>
+  <nav aria-label="Primary navigation">
+    <div class="nav-links" role="navigation" aria-hidden="false">
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="drawer">☰</button>
+    <a class="btn" href="#contact">Get a Quote</a>
+  </nav>
+</header>
+    <!-- drawer for small screens -->
+    <div id="drawer" class="drawer" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="panel">
+        <button id="closeDrawer" style="float:right;border:0;background:none;font-size:20px">✕</button>
+        <h3 style="margin-top:6px">Menu</h3>
+        <nav>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#team">Team</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="panel">
+        <h1 id="heroTitle">Industrial solutions that keep your plant running</h1>
+        <p class="lead">Pebez Industrial Services Limited carries out various Civil, Mechanical, and Electrical Engineering Projects Across West Africa.</p>
+
+        <div class="cta-row">
+          <a class="btn" href="#contact">Request Service</a>
+          <a href="#projects" style="padding:10px 14px;border-radius:10px;border:1px solid rgba(11,61,145,0.12);text-decoration:none;color:var(--brand);font-weight:700">Our Projects</a>
+        </div>
+
+        <div class="stats" role="list" aria-label="Company statistics">
+          <div class="stat" role="listitem"><div class="num">17+</div><div class="small muted">Years Experience</div></div>
+          <div class="stat" role="listitem"><div class="num">357+</div><div class="small muted">Projects Completed</div></div>
+          <div class="stat" role="listitem"><div class="num">75+</div><div class="small muted">Skilled Staff</div></div>
+        </div>
+      </div>
+
+      <aside class="illustration panel" aria-hidden="true">
+        <img src="https://media.licdn.com/dms/image/v2/D4D22AQF9Go-ZiFyxLw/feedshare-shrink_1280/B4DZpy9tbRG8As-/0/1762865371584?e=1764806400&v=beta&t=BCiwAm0_7iptG2znbYvLjkVUzu2x-VVApHdlKSp9Qq8" alt="Illustration of industrial plant" />
+      </aside>     
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" aria-labelledby="servicesTitle">
+      <h2 id="servicesTitle" style="color:var(--brand);margin:6px 0 12px">Our Services</h2>
+      <div class="grid" role="list">
+        <article class="service" role="listitem">
+          <div aria-hidden="true" style="font-size:22px">🔧</div>
+          <h3>Tank Erection & Mechanical Maintenance</h3>
+          <p>Tank Erection & Planned & breakdown maintenance for rotating and static equipment, alignment, balancing, reconditioning.</p>
+        </article>
+
+        <article class="service" role="listitem">
+          <div aria-hidden="true" style="font-size:22px">⚙</div>
+          <h3>Piping & Fabrication</h3>
+          <p>Steel piping systems(Heating arrangement), spools, supports, insulation coordination and on-site welding to codes.</p>
+        </article>
+
+        <article class="service" role="listitem">
+          <div aria-hidden="true" style="font-size:22px">🔥</div>
+          <h3>Welding & Metallurgy</h3>
+          <p>Specialized SMAW, TIG, MIG welding; weld procedure qualification and NDT support (Dye Penetrant, MPI).</p>
+        </article>
+
+        <article class="service" role="listitem">
+          <div aria-hidden="true" style="font-size:22px">⏱</div>
+          <h3>Shutdown & Turnaround</h3>
+          <p>Full turnaround planning, resourcing, execution and restoration — safety-first, on-time delivery.</p>
+        </article>
+
+        <article class="service" role="listitem">
+          <div aria-hidden="true" style="font-size:22px">📐</div>
+          <h3>Fabrication Shop</h3>
+          <p>Platework, structural fabrication, skid builds, and pressure vessel subassemblies to drawing specs.</p>
+        </article>
+
+        <article class="service" role="listitem">
+          <div aria-hidden="true" style="font-size:22px">🔩</div>
+          <h3>Instrumentation & Installation</h3>
+          <p>Installation of valves, instruments, piping supports and commissioning assistance.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" aria-labelledby="projectsTitle">
+  <h2 id="projectsTitle" style="color:var(--brand);margin:6px 0 12px">Featured Projects</h2>
+  <div class="projects" role="list">
+
+    <article class="project" role="listitem" aria-labelledby="p1">
+      <div class="thumb">
+        <img src="https://media.licdn.com/dms/image/v2/D4D22AQG8hPdnJ8HKPw/feedshare-shrink_1280/B4DZl8ii4dH4As-/0/1758731056184?e=1764201600&v=beta&t=0hZQQCsLjx4CFL4rfMu2U-uPnW3u97ttnLsSmI02qms" 
+             alt="Tank Erection project image" 
+             onclick="openLightbox(this.src, this.alt)" />
+      </div>
+      <div class="meta">
+        <h4 id="p1">Tank Erection</h4>
+        <p class="muted">Construction of 7000MT MS Tank, Jibowu, Ogun State.</p>
+      </div>
+    </article>
+
+    <article class="project" role="listitem" aria-labelledby="p2">
+      <div class="thumb">
+        <img src="https://media.licdn.com/dms/image/v2/D4D22AQGpZeDB2moy9Q/feedshare-shrink_1280/B4DZpyjMGPJAA0-/0/1762858419996?e=1764201600&v=beta&t=qQx50LqArQnYCie9-udj35ec0m_q-9Oq0YtNBDifovc" 
+             alt="Gantry Fabrication project image" 
+             onclick="openLightbox(this.src, this.alt)" />
+      </div>
+      <div class="meta">
+        <h4 id="p2">Fabrication of Loading Gantry</h4>
+        <p class="muted">Fabrication & erection of Loading Gantry, PH, Rivers State. </p>
+      </div>
+    </article>
+
+    <article class="project" role="listitem" aria-labelledby="p3">
+      <div class="thumb">
+        <img src="https://media.licdn.com/dms/image/v2/D4D22AQHFkDTtRCZDyA/feedshare-shrink_800/B4DZpymRxXJAAg-/0/1762859229659?e=1764201600&v=beta&t=kjOYKJLH5Q1x9OBz2GL0597A2DKqNtzPdbOt2XL2UoY" 
+             alt="IFR image" 
+             onclick="openLightbox(this.src, this.alt)" />
+      </div>
+      <div class="meta">
+        <h4 id="p3">Internal Floating Roof</h4>
+        <p class="muted">Installation of Internal Floating Roof (IFR).</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+    <!-- TEAM + CONTACT -->
+    <div class="two-col" aria-label="Team and contact">
+      <section id="team" class="panel" aria-labelledby="teamTitle">
+        <h2 id="teamTitle" style="color:var(--brand);margin:0 0 8px">Our Team</h2>
+        <p class="muted small">Experienced engineers and craftsmen — safety-trained and quality-focused.</p>
+        <div class="team-list" role="list">
+          <div class="member" role="listitem">
+            <div class="avatar" aria-hidden="true">IB</div>
+            <div>
+              <div style="font-weight:700">Engr. Ibezim Boris</div>
+              <div class="muted small">Chairman/CEO</div>
+            </div>
+          </div>
+
+          <div class="member" role="listitem">
+            <div class="avatar" aria-hidden="true">IC</div>
+            <div>
+              <div style="font-weight:700">Engr. Ibezim Chika</div>
+              <div class="muted small">Director</div>
+            </div>
+          </div>
+
+          <div class="member" role="listitem">
+            <div class="avatar" aria-hidden="true">OJ</div>
+            <div>
+              <div style="font-weight:700">Engr. Ozakpolor Jude</div>
+              <div class="muted small">Chief Engineer</div>
+            </div>
+          </div>
+
+          <div class="member" role="listitem">
+            <div class="avatar" aria-hidden="true">OC</div>
+            <div>
+              <div style="font-weight:700">Oleh Chyslar</div>
+              <div class="muted small">Engineering IT</div>
+            </div>
+          </div>
+
+          <div class="member" role="listitem">
+            <div class="avatar" aria-hidden="true">UV</div>
+            <div>
+              <div style="font-weight:700">Udeze Victoria</div>
+              <div class="muted small">Chief Accountant</div>
+            </div>
+          </div>
+
+          <div class="member" role="listitem">
+            <div class="avatar" aria-hidden="true">AH</div>
+            <div>
+              <div style="font-weight:700">Engr. Amaechi Henry</div>
+              <div class="muted small">HSE Officer</div>
+            </div>
+          </div>
+
+          <div class="member" role="listitem">
+            <div class="avatar" aria-hidden="true">EJ</div>
+            <div>
+              <div style="font-weight:700">Ezarevah Jeffery</div>
+              <div class="muted small">Lead Welder</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside id="contact" class="panel contact-form" aria-labelledby="contactTitle">
+        <h2 id="contactTitle" style="color:var(--brand);margin:0 0 8px">Contact & Request Quote</h2>
+        <p class="muted small">Send project details and we'll reply within 1–2 business days.</p>
+
+        <form id="contactForm" action="https://formspree.io/f/xeovqyed" method="POST">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" required placeholder="Your full name" />
+          
+            <label for="company">Company (optional)</label>
+            <input id="company" name="company" type="text" placeholder="Company name" />
+          
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com" />
+          
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" placeholder="+234 800 000 0000" />
+          
+            <label for="message">Project details</label>
+            <textarea id="message" name="message" required placeholder="Describe the scope, location, timeline, and any attachments"></textarea>
+          
+            <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
+              <button type="submit" class="btn">Send Request</button>
+              <div id="formStatus" class="muted small" aria-live="polite"></div>
+            </div>
+          </form>
+          
+
+        <hr style="margin:14px 0;border:none;border-top:1px solid rgba(11,61,145,0.06)"/>
+        <div>
+          <div><strong>Head Office</strong></div>
+          <div class="muted small">Block 80b, Plot 3502H, Divine Estate, Gate 1, Opposite EUC Hotel, Amowo Odofin, Lagos, Nigeria</div>
+          <div style="margin-top:6px"><strong>Email</strong> <div class="muted small">pebezindustrial@gmail.com</div></div>
+          <div style="margin-top:6px"><strong>Phone</strong> <div class="muted small">+234 913 220 6648</div></div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+        <footer>
+  <div class="social-links">
+    <a href="https://web.facebook.com/pebezindustrial" target="_blank" aria-label="Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://ng.linkedin.com/company/pebez-industrial-services-limited" target="_blank" aria-label="LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+    <a href="https://www.instagram.com/pebez_ltd/" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://x.com/Pebez_ltd" target="_blank" aria-label="Twitter">
+      <i class="fab fa-x-twitter"></i>
+    </a>
+  </div>
+</footer>
+
+      © <span id="year"></span> Pebez Industrial Services Limited · Built with pride · <span class="muted">All rights reserved</span>
+    </footer>
+  </div>
+
+  <!-- lightweight JS for interactions and form -->
+  <script>
+    // fill year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // drawer toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const drawer = document.getElementById('drawer');
+    const closeDrawer = document.getElementById('closeDrawer');
+
+    function openDrawer(){
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden','false');
+      menuToggle.setAttribute('aria-expanded','true');
+    }
+    function closeDrawerFn(){
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden','true');
+      menuToggle.setAttribute('aria-expanded','false');
+    }
+
+    if(menuToggle){
+      menuToggle.addEventListener('click', openDrawer);
+      closeDrawer.addEventListener('click', closeDrawerFn);
+      drawer.addEventListener('click', function(e){
+        if(e.target === drawer) closeDrawerFn();
+      });
+    }
+
+    // Front-end form handling (example only: replace with server endpoint)
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      status.textContent = '';
+
+      // simple validation
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+      if(!name || !email || !message){
+        status.textContent = 'Please complete required fields.';
+        return;
+      }
+      // basic email regex
+      const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if(!emailRe.test(email)){
+        status.textContent = 'Please enter a valid email address.';
+        return;
+      }
+
+      // Simulate send (replace with fetch to your backend)
+      status.textContent = 'Sending…';
+      setTimeout(function(){
+        status.textContent = 'Request sent. We will contact you soon.';
+        form.reset();
+      }, 900);
+    });
+
+    // Accessibility: focus first landmark for keyboard users
+    document.addEventListener('DOMContentLoaded', function(){
+      const mainAnchor = document.querySelector('header a.brand');
+      if(mainAnchor) mainAnchor.setAttribute('tabindex','0');
+    });
+    // Lightbox functions
+function openLightbox(src, alt) {
+  const lightbox = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  img.src = src;
+  img.alt = alt;
+  lightbox.style.display = 'flex';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+const form = document.getElementById('contactForm');
+const status = document.getElementById('formStatus');
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  status.textContent = 'Sending…';
+
+  const formData = new FormData(form);
+
+  fetch(form.action, {
+    method: 'POST',
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if(response.ok){
+      status.textContent = 'Request sent. We will contact you soon.';
+      form.reset();
+    } else {
+      response.json().then(data => {
+        if(data.errors) {
+          status.textContent = data.errors.map(error => error.message).join(", ");
+        } else {
+          status.textContent = 'Oops! There was a problem sending your request.';
+        }
+      });
+    }
+  }).catch(() => {
+    status.textContent = 'Oops! There was a problem sending your request.';
+  });
+});
+
+  </script>
+  <!-- Lightbox popup -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="" />
+  <span class="close-btn" onclick="closeLightbox()">×</span>
+</div>
+
+</body>
+</html>
